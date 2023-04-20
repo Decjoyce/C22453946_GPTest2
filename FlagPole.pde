@@ -1,64 +1,26 @@
-class Flag
+class FlagPole
 {
   
   float w, h;
   float s;
   float x, y;
-  float o;
-  float p;
   
-  Flag()
+  FlagPole()
   {
-    this(75, 50, 3, width/2, height/2, 1, 1);
+    this(75, 50, 3, width/2, height/2);
   }
   
-  Flag(float w, float h, float s, float x, float y, float o, float p)
+  FlagPole(float w, float h, float s, float x, float y)
   {
     this.w = w *= s;
     this.h = h *= s;
     this.s = s;
     this.x = x;
     this.y = y;
-    this.o = o;
-    this.p = p;
   }
   
   void update()
   {
-    //w += lerp(w, -sin(random(0, 360)), 0.85f) * 0.2;
-   // h += lerp(h, sin(random(0, 360)), 0.85f) * 0.05;
-   if(o < 0.5)
-   {
-     x++;
-     if(x >= width)
-     {
-       x = 0 - w;  
-     }
-   }
-   else
-   {
-     x--;
-     if(x + w  <= 0)
-     {
-       x = width;  
-     }
-   }
-   if(p > 0.5)
-   {
-     y++;
-     if(y >= height)
-     {
-       y = 0 - h;  
-     }
-   }
-   else
-   {
-     y--;
-     if(y + h  <= 0)
-     {
-       y = height;  
-     }
-   }
    w = abs(lerp(w, w + sin(random(0, 360)) * 10, 0.2f));
    h = abs(lerp(h, h + sin(random(0, 360)) * 10, 0.2f));
    render();
