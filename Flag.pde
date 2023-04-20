@@ -21,8 +21,6 @@ class Flag
   
   void update()
   {
-    x = random(0, width);
-    y = random(0, height);
     render();
   }
   
