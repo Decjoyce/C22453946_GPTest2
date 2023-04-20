@@ -1,15 +1,20 @@
+ArrayList<Flag> flags = new ArrayList<Flag>();
 void setup()
 {
-  flag = new Flag(25, 25, 3, width/2, height/2);
+  flag = new Flag(w, h, 5, x, y);
+  size(500, 500);
+  colorMode(HSB);
 }
 
 Flag flag;
 
+float x = 50;
+float y = 50;
+float w = 100;
+float h = 75;
+
 void draw()
 {
-       rect(x, y, w, h);
-     for(int i = 0; i < 5; i++)
-     {
-       rect(x * i, y * i, w, h);
-     }
+  background(255);
+  flag.update();
 }
